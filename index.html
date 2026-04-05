@@ -546,11 +546,11 @@ footer .footer-copy{font-size:.76rem;opacity:.4;border-top:1px solid rgba(255,25
   <div class="section-head">
     <span class="tag">Exam Simulation</span>
     <h2>Practice Quiz — 2030 Agenda</h2>
-    <p>Test your knowledge with 12 questions drawn from official UN and EU documents. Aim for full marks before your <em>Maturità</em> oral exam!</p>
+    <p>Test your knowledge with 15 questions drawn from official UN and EU documents. Aim for full marks before your <em>Maturità</em> oral exam!</p>
   </div>
   <div class="quiz-wrap" id="quiz-area">
     <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="progress-fill" style="width:0%"></div></div>
-    <div class="quiz-meta"><span id="q-counter">Question 1 of 12</span><span id="q-score-live">Score: 0</span></div>
+    <div class="quiz-meta"><span id="q-counter">Question 1 of 15</span><span id="q-score-live">Score: 0</span></div>
     <div class="quiz-question" id="quiz-question">Loading…</div>
     <div class="options" id="quiz-options"></div>
     <div class="quiz-actions">
@@ -559,7 +559,7 @@ footer .footer-copy{font-size:.76rem;opacity:.4;border-top:1px solid rgba(255,25
     </div>
   </div>
   <div id="score-result" class="score-result" style="display:none">
-    <div class="score-circle"><span class="score-n" id="final-score-n">0</span><span class="score-d" id="final-score-d">/ 12</span></div>
+    <div class="score-circle"><span class="score-n" id="final-score-n">0</span><span class="score-d" id="final-score-d">/ 15</span></div>
     <p class="score-msg" id="final-msg">Well done!</p>
     <p class="score-sub" id="final-sub">Keep studying the topics where you made mistakes.</p>
     <button class="btn btn-primary" onclick="restartQuiz()"><i class="fas fa-rotate-right"></i> Try Again</button>
@@ -573,6 +573,21 @@ footer .footer-copy{font-size:.76rem;opacity:.4;border-top:1px solid rgba(255,25
     <span class="tag">Project Guidelines</span>
     <h2>Padlet Project: SDG 4 &amp; SDG 8</h2>
     <p>Create a multimedia digital board investigating child labour in agriculture — linking SDG 4 (Quality Education) and SDG 8 (Decent Work) to the realities of global food production. Qui trovi tutto quello che ti serve: guida a Padlet, idee, video consigliati e fonti.</p>
+  </div>
+
+  <!-- ▸ CAPOLAVORO / E-PORTFOLIO BANNER -->
+  <div style="background:linear-gradient(135deg,#064e3b,#0d9488);color:#fff;border-radius:var(--radius);padding:24px 28px;margin-bottom:28px;display:flex;gap:16px;align-items:flex-start">
+    <i class="fas fa-award" style="font-size:2rem;flex-shrink:0;margin-top:4px;opacity:.9"></i>
+    <div>
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:5px">Piattaforma UNICA · Ministero dell'Istruzione · Maturità 2026</div>
+      <div style="font-size:1.05rem;font-weight:700;margin-bottom:6px">Il tuo Padlet può diventare il "Capolavoro" nell'E-Portfolio!</div>
+      <div style="font-size:.9rem;opacity:.88;line-height:1.6">Il Ministero richiede che ogni studente carichi un artefatto rappresentativo nel proprio E-Portfolio su <strong>Unica</strong>. Un sito web / Padlet bilingue sull'Agenda 2030 è il <em>Capolavoro</em> ideale: è un prodotto digitale navigabile che dimostra competenze multilinguistiche, digitali, di cittadinanza e imprenditoriali — le 4 Competenze Chiave Europee più apprezzate dalla commissione. <strong>Non è solo un compito: è il tuo biglietto da visita per il colloquio.</strong></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
+        <a href="https://unica.istruzione.gov.it/portale/it/orientamento/il-tuo-percorso/e-portfolio" target="_blank" style="background:rgba(255,255,255,.2);color:#fff;padding:7px 16px;border-radius:50px;font-size:.83rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.35)"><i class="fas fa-external-link-alt" style="margin-right:6px"></i>Unica E-Portfolio</a>
+        <a href="https://www.youtube.com/watch?v=PU71R6NjkGM" target="_blank" style="background:rgba(255,255,255,.2);color:#fff;padding:7px 16px;border-radius:50px;font-size:.83rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.35)"><i class="fab fa-youtube" style="margin-right:6px"></i>Video: come caricare il Capolavoro su Unica</a>
+        <a href="https://www.youtube.com/watch?v=FXE9w4R-MOk" target="_blank" style="background:rgba(255,255,255,.2);color:#fff;padding:7px 16px;border-radius:50px;font-size:.83rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.35)"><i class="fab fa-youtube" style="margin-right:6px"></i>Cos'è il Capolavoro?</a>
+      </div>
+    </div>
   </div>
 
   <!-- ▸ PADLET HOW-TO GUIDE -->
@@ -2233,6 +2248,21 @@ const quizData = [
   {q:'The three pillars of sustainable development are:',
    opts:['Economic, Political, Cultural','Environmental, Social, Economic','Food, Energy, Water','Agricultural, Industrial, Technological'],
    correct:1,exp:'All three pillars must be balanced — no sustainable development can sacrifice one for another.'},
+  {q:'According to USDA research, what is the main paradox of the EU Farm to Fork Strategy?',
+   opts:['It reduces food quality while increasing production costs',
+         'Strict input cuts may lower yields and raise food prices globally, worsening hunger in the poorest regions — undermining SDG 2 while pursuing SDG 13 &amp; 15',
+         'It only applies to EU member states and has no global impact',
+         'It focuses too much on organic farming and ignores precision agriculture'],
+   correct:1,exp:'This trade-off (climate urgency vs. global food equity) is the most sophisticated exam argument you can make. USDA (2021) identified three geopolitical scenarios with different economic impacts.'},
+  {q:'In the CLIL "4 Cs" methodology, what does "Cognition" refer to?',
+   opts:['The content subject being studied (e.g. sustainability science)',
+         'Communication skills in the foreign language',
+         'Higher Order Thinking Skills: critical analysis, problem-solving, data evaluation',
+         'Cultural awareness and intercultural perspective'],
+   correct:2,exp:'David Marsh\'s 4 Cs framework: Content, Communication, Cognition (HOTS), Culture. Cognition specifically means Higher Order Thinking Skills — not just memorising facts.'},
+  {q:'Which technological innovation allows farms to convert livestock waste into electricity, making them circular energy hubs?',
+   opts:['Solar irrigation panels','Anaerobic digestion / biogas production','CRISPR/Cas9 gene editing','Satellite precision mapping'],
+   correct:1,exp:'Biogas (anaerobic digestion) converts ruminant methane (CH₄) — a potent greenhouse gas — into renewable energy. This links SDG 7 (Clean Energy) and SDG 13 (Climate Action) directly to livestock management.'},
 ];
 
 let qIndex=0, score=0, answered=false;
