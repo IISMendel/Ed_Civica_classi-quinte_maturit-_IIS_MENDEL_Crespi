@@ -45,8 +45,12 @@ li{margin-bottom:4px}
 .hero h1 span{background:linear-gradient(90deg,#74c69d,#f4a261);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.8);max-width:640px;margin:20px auto 40px;font-weight:300;z-index:1}
 .hero-badges{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;z-index:1}
-.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);
-  padding:8px 20px;border-radius:50px;font-size:.9rem;font-weight:500;backdrop-filter:blur(4px)}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.6);
+  padding:9px 22px;border-radius:50px;font-size:.9rem;font-weight:600;backdrop-filter:blur(8px);
+  color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.3);text-decoration:none;
+  transition:all .25s cubic-bezier(.4,0,.2,1);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.badge:hover{background:rgba(255,255,255,.38);border-color:rgba(255,255,255,.9);
+  transform:translateY(-3px) scale(1.04);box-shadow:0 8px 20px rgba(0,0,0,.25);text-decoration:none;color:#fff}
 .hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;
   align-items:center;gap:6px;color:rgba(255,255,255,.5);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;animation:bounce 2s ease-in-out infinite}
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
@@ -381,14 +385,63 @@ nav{border-bottom:none!important;box-shadow:0 2px 20px rgba(0,0,0,.07)!important
 
 <!-- ══ HERO ══════════════════════════════════════════════════════ -->
 <header class="hero" id="top">
+
+  <!-- ── SCHOOL PHOTO SLOT ────────────────────────────────────────
+       Sostituisci src="" con l'URL raw della tua foto su GitHub, es:
+       src="https://raw.githubusercontent.com/TUO-UTENTE/TUO-REPO/main/foto-classe.jpg"
+  ──────────────────────────────────────────────────────────────── -->
+  <div style="position:relative;z-index:2;margin-bottom:22px;display:flex;justify-content:center">
+    <div style="position:relative;display:inline-block">
+      <img id="school-photo"
+           src=""
+           alt="Foto di classe — IIS Mendel"
+           onerror="this.parentElement.style.display='none'"
+           style="width:110px;height:110px;border-radius:50%;object-fit:cover;
+                  border:3px solid rgba(255,255,255,.7);
+                  box-shadow:0 4px 20px rgba(0,0,0,.35);
+                  display:block;background:rgba(255,255,255,.1)">
+      <!-- Placeholder visibile finché non si aggiunge la foto -->
+      <div id="photo-placeholder" style="width:110px;height:110px;border-radius:50%;
+           background:rgba(255,255,255,.12);border:2px dashed rgba(255,255,255,.5);
+           display:flex;flex-direction:column;align-items:center;justify-content:center;
+           color:rgba(255,255,255,.6);font-size:.72rem;text-align:center;gap:4px;
+           box-shadow:0 4px 20px rgba(0,0,0,.2)">
+        <i class="fas fa-camera" style="font-size:1.4rem;opacity:.7"></i>
+        <span>Aggiungi<br>la tua foto</span>
+      </div>
+    </div>
+  </div>
+  <!-- Nota: quando aggiungi src all'img, lo script sotto nasconde il placeholder -->
+  <script>
+    (function(){
+      var img=document.getElementById('school-photo');
+      var ph=document.getElementById('photo-placeholder');
+      if(img&&img.src&&img.src!==window.location.href){
+        ph.style.display='none';
+        img.style.display='block';
+      }else if(img){img.style.display='none';}
+    })();
+  </script>
+
   <div class="hero-eyebrow"><i class="fas fa-seedling"></i> IIS MENDEL &mdash; Classe 5° &mdash; Esame di Maturità 2025/2026</div>
   <h1>Future <span>Harvest</span></h1>
   <p class="hero-sub">An interactive hub for 5th-year agricultural students exploring the UN 2030 Agenda, all 17 SDGs and their connection to agri-food systems and the <em>Maturità</em> oral exam.</p>
   <div class="hero-badges">
-    <span class="badge"><i class="fas fa-globe"></i> All 17 SDGs</span>
-    <span class="badge"><i class="fas fa-tractor"></i> Agriculture &amp; Food Systems</span>
-    <span class="badge"><i class="fas fa-leaf"></i> EU Farm to Fork</span>
-    <span class="badge"><i class="fas fa-graduation-cap"></i> Maturità Prep</span>
+    <a class="badge" href="#" onclick="openTab(event,'all17');document.querySelector('nav').scrollIntoView();return false" title="Esplora tutti e 17 gli SDGs">
+      <i class="fas fa-globe"></i> All 17 SDGs
+    </a>
+    <a class="badge" href="#" onclick="openTab(event,'sdgs');document.querySelector('nav').scrollIntoView();return false" title="SDGs e Agricoltura">
+      <i class="fas fa-tractor"></i> Agriculture &amp; Food Systems
+    </a>
+    <a class="badge" href="#" onclick="openTab(event,'sdgs');document.querySelector('nav').scrollIntoView();return false" title="EU Farm to Fork Strategy">
+      <i class="fas fa-leaf"></i> EU Farm to Fork
+    </a>
+    <a class="badge" href="#" onclick="openTab(event,'matmap');document.querySelector('nav').scrollIntoView();return false" title="Mappa interdisciplinare per la Maturità">
+      <i class="fas fa-graduation-cap"></i> Maturità Prep
+    </a>
+    <a class="badge" href="https://sdgs.un.org/partnerships" target="_blank" rel="noopener" title="UN SDG Partnerships — portale ufficiale ONU">
+      <i class="fas fa-handshake"></i> UN SDG Partnerships
+    </a>
   </div>
   <div class="hero-scroll"><span>Scroll</span><i class="fas fa-chevron-down"></i></div>
 </header>
