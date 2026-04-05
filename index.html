@@ -276,6 +276,105 @@ footer .footer-copy{font-size:.76rem;opacity:.4;border-top:1px solid rgba(255,25
   .modal-body{max-height:65vh}
   .modal-header,.modal-body{padding:20px 20px}
 }
+
+/* ══ MODERN DESIGN UPGRADE ═══════════════════════════════════════ */
+/* Subtle animated body bg */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+    radial-gradient(900px 600px at 5% 10%,rgba(22,163,74,.07),transparent 70%),
+    radial-gradient(700px 500px at 95% 15%,rgba(14,165,233,.06),transparent 70%),
+    radial-gradient(600px 400px at 50% 90%,rgba(245,158,11,.05),transparent 70%);
+}
+/* Shimmer keyframe */
+@keyframes shimmer{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+@keyframes lift{from{box-shadow:var(--shadow-sm)}to{box-shadow:0 12px 32px rgba(22,163,74,.18)}}
+
+/* Cards — shimmer + deeper hover */
+.card{position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s}
+.card::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:skewX(-20deg);pointer-events:none;transition:none}
+.card:hover::after{animation:shimmer .7s ease forwards}
+.card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 16px 40px rgba(22,163,74,.15)}
+
+/* Pillars */
+.pillar{position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s}
+.pillar::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+  transform:skewX(-20deg);pointer-events:none}
+.pillar:hover::after{animation:shimmer .7s ease forwards}
+.pillar:hover{transform:translateY(-8px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
+
+/* 5P cards */
+.p-card{position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s,filter .3s}
+.p-card::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  transform:skewX(-20deg);pointer-events:none}
+.p-card:hover::after{animation:shimmer .7s ease forwards}
+.p-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,.18);filter:brightness(1.06)}
+
+/* SDG detail cards */
+.sdg-card{position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s}
+.sdg-card::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+  transform:skewX(-20deg);pointer-events:none}
+.sdg-card:hover::after{animation:shimmer .7s ease forwards}
+.sdg-card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,.12)}
+
+/* SDG tile grid */
+.sdg-tile{transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s,filter .3s}
+.sdg-tile::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+  transform:skewX(-20deg);pointer-events:none}
+.sdg-tile:hover::after{animation:shimmer .7s ease forwards}
+.sdg-tile:hover{transform:translateY(-8px) scale(1.04);box-shadow:0 18px 40px rgba(0,0,0,.2);filter:brightness(1.08)}
+
+/* Step cards */
+.step-card{position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.step-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(22,163,74,.12)}
+
+/* Modern tab buttons */
+.tab-btn{border-radius:50px;margin:6px 3px;border:1.5px solid transparent!important;
+  transition:all .25s cubic-bezier(.4,0,.2,1)!important;padding:10px 18px!important}
+.tab-btn:hover{background:var(--green-pale)!important;border-color:var(--green-light)!important;
+  transform:translateY(-2px);box-shadow:0 4px 12px rgba(22,163,74,.15)}
+.tab-btn.active{background:var(--green)!important;color:#fff!important;border-color:var(--green)!important;
+  box-shadow:0 4px 16px rgba(22,163,74,.35)!important;transform:translateY(-1px)}
+.tab-btn.active i{color:#fff!important}
+nav{border-bottom:none!important;box-shadow:0 2px 20px rgba(0,0,0,.07)!important;padding:8px 0}
+.nav-inner{gap:4px}
+
+/* Tag gradient */
+.section-head .tag{background:linear-gradient(90deg,var(--green-pale),#d1fae5);
+  border:1px solid rgba(22,163,74,.25);box-shadow:0 2px 8px rgba(22,163,74,.1)}
+
+/* Phrase cards */
+.phrase-card{position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s}
+.phrase-card::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+  transform:skewX(-20deg);pointer-events:none}
+.phrase-card:hover::after{animation:shimmer .7s ease forwards}
+.phrase-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.1)}
+
+/* Button modern */
+.btn-primary{background:linear-gradient(135deg,var(--green),var(--green-mid))!important;
+  box-shadow:0 4px 16px rgba(22,163,74,.4)!important;transition:all .25s!important}
+.btn-primary:hover{transform:translateY(-3px)!important;box-shadow:0 8px 24px rgba(22,163,74,.5)!important;
+  background:linear-gradient(135deg,var(--green-mid),var(--green-light))!important}
+
+/* Stat numbers pop */
+.stat-num{background:linear-gradient(135deg,var(--green),var(--green-mid));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* EU card glow on hover */
+.eu-card{transition:box-shadow .3s,transform .3s}
+.eu-card:hover{box-shadow:0 16px 40px rgba(0,82,204,.25);transform:translateY(-3px)}
+
+/* Filter buttons (phrases) */
+.pf-btn{transition:all .2s cubic-bezier(.4,0,.2,1)!important}
+.pf-btn:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(22,163,74,.2)}
+.pf-active{background:linear-gradient(135deg,var(--green),var(--green-mid))!important;
+  box-shadow:0 4px 14px rgba(22,163,74,.35)!important}
 </style>
 </head>
 <body>
@@ -1332,34 +1431,194 @@ footer .footer-copy{font-size:.76rem;opacity:.4;border-top:1px solid rgba(255,25
 
   </div>
 
-  <!-- QUICK REFERENCE CARD -->
-  <div style="background:linear-gradient(135deg,#064e3b,#16a34a,#0d9488);border-radius:var(--radius-lg);padding:28px 32px;color:#fff;margin-top:36px">
-    <h3 style="color:#fbbf24;font-family:'Playfair Display',serif;margin-bottom:16px">⭐ I 5 Connettivi Più Utili — Imparali a Memoria</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px">
-      <div style="background:rgba(255,255,255,.12);border-radius:8px;padding:12px 16px">
-        <div style="font-weight:700;font-size:1rem">Furthermore / Moreover</div>
-        <div style="font-size:.85rem;opacity:.85;margin-top:4px">Inoltre / Per di più</div>
-        <div style="font-size:.78rem;opacity:.7;margin-top:4px">Aggiunge un punto</div>
+  <!-- CONNETTIVI EXPANDED -->
+  <div style="margin-top:40px">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+      <div style="background:linear-gradient(135deg,var(--green),var(--green-mid));color:#fff;border-radius:14px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;box-shadow:0 6px 16px rgba(22,163,74,.35)"><i class="fas fa-link"></i></div>
+      <div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.7rem;margin:0">⭐ Connettivi Utili all'Orale — Guida Completa</h2>
+        <p style="color:var(--text-muted);margin:4px 0 0;font-size:.93rem">22 connettivi organizzati per funzione. Usali per rendere il tuo discorso più fluido, coerente e accademico.</p>
       </div>
-      <div style="background:rgba(255,255,255,.12);border-radius:8px;padding:12px 16px">
-        <div style="font-weight:700;font-size:1rem">However / Nevertheless</div>
-        <div style="font-size:.85rem;opacity:.85;margin-top:4px">Tuttavia / Nonostante ciò</div>
-        <div style="font-size:.78rem;opacity:.7;margin-top:4px">Introduce un contrasto</div>
+    </div>
+
+    <!-- Group 1: ADDING -->
+    <div style="margin-bottom:24px">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,#0369a1,#0ea5e9);color:#fff;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px;box-shadow:0 3px 10px rgba(3,105,161,.3)"><i class="fas fa-plus"></i> AGGIUNGERE UN PUNTO</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px">
+        <div style="background:#f0f9ff;border:1.5px solid #bae6fd;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#0369a1">Furthermore / Moreover</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Inoltre / Per di più</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"Furthermore, precision farming helps reduce water waste."</div>
+        </div>
+        <div style="background:#f0f9ff;border:1.5px solid #bae6fd;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#0369a1">In addition (to this)</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Inoltre / In aggiunta a ciò</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"In addition to this, the EU targets 25% organic farmland."</div>
+        </div>
+        <div style="background:#f0f9ff;border:1.5px solid #bae6fd;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#0369a1">What is more</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Quel che è più / Inoltre</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"What is more, 70% of child labourers work in agriculture."</div>
+        </div>
+        <div style="background:#f0f9ff;border:1.5px solid #bae6fd;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#0369a1">Not only… but also</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Non solo… ma anche</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"Not only does SDG 2 address hunger, but it also promotes sustainable farming."</div>
+        </div>
       </div>
-      <div style="background:rgba(255,255,255,.12);border-radius:8px;padding:12px 16px">
-        <div style="font-weight:700;font-size:1rem">Therefore / As a result</div>
-        <div style="font-size:.85rem;opacity:.85;margin-top:4px">Pertanto / Di conseguenza</div>
-        <div style="font-size:.78rem;opacity:.7;margin-top:4px">Introduce una conclusione</div>
+    </div>
+
+    <!-- Group 2: CONTRASTING -->
+    <div style="margin-bottom:24px">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,#dc2626,#f43f5e);color:#fff;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px;box-shadow:0 3px 10px rgba(220,38,38,.3)"><i class="fas fa-arrows-left-right"></i> CONTRASTARE / OPPORRE</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px">
+        <div style="background:#fff1f2;border:1.5px solid #fecdd3;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#dc2626">However / Nevertheless</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Tuttavia / Ciononostante</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"However, this approach has significant economic drawbacks."</div>
+        </div>
+        <div style="background:#fff1f2;border:1.5px solid #fecdd3;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#dc2626">On the other hand</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">D'altra parte / D'altro canto</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"On the other hand, organic farming supports biodiversity."</div>
+        </div>
+        <div style="background:#fff1f2;border:1.5px solid #fecdd3;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#dc2626">In contrast / Whereas</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Al contrario / Mentre invece</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"In contrast, developed nations consume far more resources."</div>
+        </div>
+        <div style="background:#fff1f2;border:1.5px solid #fecdd3;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#dc2626">Despite / In spite of</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Nonostante / Malgrado</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"Despite progress, 160 million children still suffer labour exploitation."</div>
+        </div>
       </div>
-      <div style="background:rgba(255,255,255,.12);border-radius:8px;padding:12px 16px">
-        <div style="font-weight:700;font-size:1rem">For instance / For example</div>
-        <div style="font-size:.85rem;opacity:.85;margin-top:4px">Per esempio / Ad esempio</div>
-        <div style="font-size:.78rem;opacity:.7;margin-top:4px">Introduce un esempio</div>
+    </div>
+
+    <!-- Group 3: CAUSE & EFFECT -->
+    <div style="margin-bottom:24px">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,#d97706,#f59e0b);color:#fff;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px;box-shadow:0 3px 10px rgba(217,119,6,.3)"><i class="fas fa-arrow-right"></i> CAUSA / EFFETTO</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px">
+        <div style="background:#fffbeb;border:1.5px solid #fde68a;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#d97706">Therefore / Thus</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Pertanto / Quindi</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"Therefore, reducing pesticide use is essential for SDG 15."</div>
+        </div>
+        <div style="background:#fffbeb;border:1.5px solid #fde68a;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#d97706">As a result / Consequently</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Di conseguenza / Pertanto</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"As a result, food prices may rise in developing countries."</div>
+        </div>
+        <div style="background:#fffbeb;border:1.5px solid #fde68a;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#d97706">This leads to / This means that</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Questo porta a / Questo significa che</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"This leads to a vicious cycle of poverty and school dropout."</div>
+        </div>
+        <div style="background:#fffbeb;border:1.5px solid #fde68a;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#d97706">Due to / Owing to</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">A causa di / A motivo di</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"Due to climate change, droughts are becoming more frequent."</div>
+        </div>
       </div>
-      <div style="background:rgba(255,255,255,.12);border-radius:8px;padding:12px 16px">
-        <div style="font-weight:700;font-size:1rem">In contrast / On the contrary</div>
-        <div style="font-size:.85rem;opacity:.85;margin-top:4px">Al contrario / In contrasto</div>
-        <div style="font-size:.78rem;opacity:.7;margin-top:4px">Oppone due idee</div>
+    </div>
+
+    <!-- Group 4: EXAMPLES -->
+    <div style="margin-bottom:24px">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,var(--green),var(--green-mid));color:#fff;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px;box-shadow:0 3px 10px rgba(22,163,74,.3)"><i class="fas fa-list-ul"></i> ESEMPI / DATI</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px">
+        <div style="background:var(--green-pale);border:1.5px solid #86efac;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:var(--green)">For instance / For example</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Per esempio / Ad esempio</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"For instance, drip irrigation can save up to 50% of water."</div>
+        </div>
+        <div style="background:var(--green-pale);border:1.5px solid #86efac;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:var(--green)">Such as / Including</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Come / Tra cui</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"Practices such as agroforestry and crop rotation protect biodiversity."</div>
+        </div>
+        <div style="background:var(--green-pale);border:1.5px solid #86efac;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:var(--green)">According to</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Secondo / Stando a</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"According to the ILO 2021 report, 160 million children are in labour."</div>
+        </div>
+        <div style="background:var(--green-pale);border:1.5px solid #86efac;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:var(--green)">As shown by / As demonstrated by</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Come dimostrano / Come evidenziano</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"As shown by UN data, agricultural emissions reach 12% of global GHGs."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group 5: SEQUENCE / STRUCTURE -->
+    <div style="margin-bottom:24px">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,#7c3aed,#a855f7);color:#fff;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px;box-shadow:0 3px 10px rgba(124,58,237,.3)"><i class="fas fa-list-ol"></i> STRUTTURA / SEQUENZA</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px">
+        <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#7c3aed">First of all / First and foremost</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Prima di tutto / Anzitutto</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"First of all, let me explain what the 2030 Agenda is."</div>
+        </div>
+        <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#7c3aed">Secondly / Then / After that</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">In secondo luogo / Poi / Dopodiché</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"Secondly, I will explain the agricultural connections."</div>
+        </div>
+        <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#7c3aed">Finally / Last but not least</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Infine / Ultimo ma non meno importante</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"Finally, I would like to highlight the interdisciplinary connections."</div>
+        </div>
+        <div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#7c3aed">With regard to / Regarding</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Per quanto riguarda / Riguardo a</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"With regard to SDG 13, agriculture must reduce its carbon footprint."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group 6: CONCLUDING + OPINION -->
+    <div style="margin-bottom:0">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,#0d9488,#14b8a6);color:#fff;padding:6px 18px;border-radius:50px;font-size:.8rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px;box-shadow:0 3px 10px rgba(13,148,136,.3)"><i class="fas fa-flag-checkered"></i> CONCLUDERE / OPINIONE</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px">
+        <div style="background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#0d9488">To sum up / In conclusion</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">In sintesi / In conclusione</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"To sum up, the 2030 Agenda requires action on all three pillars."</div>
+        </div>
+        <div style="background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#0d9488">In my opinion / I believe / I would argue</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">A mio avviso / Credo / Sostengo che</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"I would argue that the Farm to Fork paradox is a key challenge."</div>
+        </div>
+        <div style="background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#0d9488">This highlights / This illustrates</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Ciò evidenzia / Questo dimostra</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"This highlights the conflict between SDG 2 and SDG 13."</div>
+        </div>
+        <div style="background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#0d9488">It is worth noting that</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Vale la pena notare che</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"It is worth noting that 79 million children work in hazardous conditions."</div>
+        </div>
+        <div style="background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#0d9488">All things considered</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Tutto sommato / Considerato tutto</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"All things considered, sustainable agriculture is our best response."</div>
+        </div>
+        <div style="background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:10px;padding:13px 16px">
+          <div style="font-weight:700;font-size:.97rem;color:#0d9488">As I mentioned earlier</div>
+          <div style="font-size:.83rem;color:#475569;margin-top:3px">Come ho detto prima / Come accennato</div>
+          <div style="font-size:.77rem;color:#64748b;margin-top:4px;font-style:italic">"As I mentioned earlier, this links directly to SDG 8."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Memory strip -->
+    <div style="background:linear-gradient(135deg,#064e3b,#16a34a,#0d9488);border-radius:var(--radius-lg);padding:22px 28px;color:#fff;margin-top:28px;display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+      <div style="font-size:1.6rem">🧠</div>
+      <div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:4px">Trucco rapido — "AFCSCO"</div>
+        <div style="font-size:.88rem;opacity:.9">Impara almeno un connettivo per ogni funzione: <strong>A</strong>ggiungi (Furthermore) · <strong>F</strong>ai contrasto (However) · <strong>C</strong>ausa/effetto (Therefore) · <strong>S</strong>piega con esempi (For instance) · <strong>C</strong>onclude (To sum up) · <strong>O</strong>pinione (I would argue). Con questi 6 navighi qualsiasi risposta con eleganza accademica.</div>
       </div>
     </div>
   </div>
